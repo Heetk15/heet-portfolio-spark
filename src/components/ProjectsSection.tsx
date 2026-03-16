@@ -25,7 +25,14 @@ const projects = [
 ];
 
 const ProjectsSection = () => (
-  <section id="projects" className="py-28">
+  <motion.section
+    id="projects"
+    className="py-28"
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.2 }}
+    transition={{ duration: 0.6, ease: [0.2, 0, 0, 1] as const }}
+  >
     <div className="section-container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -53,7 +60,7 @@ const ProjectsSection = () => (
             {/* Gradient overlay on hover */}
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-            <div className="card-surface p-8 flex flex-col gap-4 h-full relative">
+            <div className="card-surface project-card p-8 flex flex-col gap-4 h-full relative">
               <div className="flex items-center justify-between">
                 <h3 className="text-xl font-semibold text-foreground group-hover:text-accent transition-colors duration-300">
                   {p.title}
@@ -81,7 +88,7 @@ const ProjectsSection = () => (
         ))}
       </div>
     </div>
-  </section>
+  </motion.section>
 );
 
 export default ProjectsSection;

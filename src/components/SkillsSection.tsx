@@ -39,7 +39,14 @@ const categories: SkillCategory[] = [
 ];
 
 const SkillsSection = () => (
-  <section id="skills" className="py-28">
+  <motion.section
+    id="skills"
+    className="py-28"
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.2 }}
+    transition={{ duration: 0.6, ease: [0.2, 0, 0, 1] as const }}
+  >
     <div className="section-container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -74,25 +81,19 @@ const SkillsSection = () => (
             </div>
             <div className="flex flex-wrap gap-2">
               {cat.skills.map((s) => (
-                <motion.span
+                <span
                   key={s}
-                  className="px-3 py-1.5 rounded-lg bg-muted/50 text-sm text-foreground border border-border/50 cursor-default"
-                  whileHover={{
-                    scale: 1.05,
-                    borderColor: "rgba(59,130,246,0.4)",
-                    boxShadow: "0 0 15px rgba(59,130,246,0.15)",
-                  }}
-                  transition={{ duration: 0.2 }}
+                  className="skill-badge px-3 py-1.5 rounded-lg bg-muted/50 text-sm text-foreground border border-border/50 cursor-default"
                 >
                   {s}
-                </motion.span>
+                </span>
               ))}
             </div>
           </motion.div>
         ))}
       </div>
     </div>
-  </section>
+  </motion.section>
 );
 
 export default SkillsSection;

@@ -8,7 +8,14 @@ const socials = [
 ];
 
 const ContactSection = () => (
-  <section id="contact" className="py-28 relative">
+  <motion.section
+    id="contact"
+    className="py-28 relative"
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.2 }}
+    transition={{ duration: 0.6, ease: [0.2, 0, 0, 1] as const }}
+  >
     {/* Subtle gradient bg */}
     <div className="absolute inset-0 bg-gradient-to-t from-accent/5 via-transparent to-transparent pointer-events-none" />
 
@@ -66,7 +73,7 @@ const ContactSection = () => (
         ))}
       </motion.div>
     </div>
-  </section>
+  </motion.section>
 );
 
 export default ContactSection;

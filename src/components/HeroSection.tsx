@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowDown, FileText, Mail } from "lucide-react";
 import avatar from "@/assets/avatar.png";
 import useTypingAnimation from "@/hooks/useTypingAnimation";
+import HeroParticles from "@/components/HeroParticles";
 
 const roles = [
   "Full Stack Developer",
@@ -19,8 +20,19 @@ const HeroSection = () => {
   const typedText = useTypingAnimation(roles, 70, 40, 2200);
 
   return (
-    <section className="min-h-[90vh] flex items-center pt-14 relative overflow-hidden">
-      <div className="section-container w-full">
+    <motion.section
+      className="min-h-[90vh] flex items-center pt-14 relative overflow-hidden"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.25 }}
+      transition={{ duration: 0.6, ease: [0.2, 0, 0, 1] as const }}
+    >
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <HeroParticles />
+      </div>
+      <div className="hero-tech-grid absolute inset-0 z-[1] pointer-events-none" />
+
+      <div className="section-container w-full relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
           {/* Avatar with glow */}
           <motion.div
@@ -30,16 +42,14 @@ const HeroSection = () => {
             transition={{ duration: 0.7, ease: [0.2, 0, 0, 1] as const }}
           >
             <div className="relative">
-              {/* Glow halo */}
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-accent/30 to-purple-500/20 blur-2xl scale-110" />
-              <motion.div
-                className="relative w-64 h-64 md:w-80 md:h-80 rounded-3xl overflow-hidden bg-muted border border-border/50"
-                style={{ boxShadow: "0 0 60px rgba(59,130,246,0.15), inset 0 2px 20px rgba(0,0,0,0.3)" }}
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              <div className="absolute -inset-8 rounded-full avatar-radial-light" />
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-accent/25 to-purple-500/18 blur-2xl scale-110" />
+              <div
+                className="relative w-64 h-64 md:w-80 md:h-80 rounded-3xl overflow-hidden bg-muted border border-border/50 avatar-float"
+                style={{ boxShadow: "0 0 42px rgba(59,130,246,0.16), inset 0 2px 20px rgba(0,0,0,0.28)" }}
               >
                 <img src={avatar} alt="Heet Kothari" className="w-full h-full object-cover" />
-              </motion.div>
+              </div>
             </div>
           </motion.div>
 
@@ -50,7 +60,7 @@ const HeroSection = () => {
               {...fadeInUp}
               transition={{ duration: 0.6, delay: 0.1, ease: [0.2, 0, 0, 1] as const }}
             >
-              <span className="text-gradient">Heet Kothari</span>
+              <span className="hero-title-neon">Heet Kothari</span>
             </motion.h1>
 
             <motion.div
@@ -79,19 +89,19 @@ const HeroSection = () => {
             >
               <a
                 href="#projects"
-                className="glow-button inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-accent text-accent-foreground font-semibold text-sm hover:opacity-90 transition-all"
+                className="hero-button glow-button inline-flex items-center gap-2 px-6 py-3 rounded-xl text-accent-foreground font-semibold text-sm"
               >
                 <ArrowDown size={16} /> View Projects
               </a>
               <a
                 href="#"
-                className="glow-button inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-border/50 text-foreground font-medium text-sm hover:border-accent/50 transition-all bg-card/30 backdrop-blur-sm"
+                className="hero-button glow-button inline-flex items-center gap-2 px-6 py-3 rounded-xl text-foreground font-medium text-sm"
               >
                 <FileText size={16} /> Download Resume
               </a>
               <a
                 href="#contact"
-                className="glow-button inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-border/50 text-foreground font-medium text-sm hover:border-accent/50 transition-all bg-card/30 backdrop-blur-sm"
+                className="hero-button glow-button inline-flex items-center gap-2 px-6 py-3 rounded-xl text-foreground font-medium text-sm"
               >
                 <Mail size={16} /> Contact Me
               </a>
@@ -99,7 +109,7 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
