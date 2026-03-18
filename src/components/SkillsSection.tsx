@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
-import {
-  Code2, Cpu, Server, Database, Wrench,
-} from "lucide-react";
+import { Code2, Cpu, Server, Database, Wrench } from "lucide-react";
 import { type ReactNode } from "react";
+import ScrollReveal from "@/components/ScrollReveal";
 
 interface SkillCategory {
   name: string;
@@ -11,89 +10,51 @@ interface SkillCategory {
 }
 
 const categories: SkillCategory[] = [
-  {
-    name: "Programming",
-    icon: <Code2 size={20} />,
-    skills: ["Python", "C++", "JavaScript"],
-  },
-  {
-    name: "Machine Learning",
-    icon: <Cpu size={20} />,
-    skills: ["TensorFlow", "Scikit-learn", "XGBoost", "Pandas", "NumPy", "Random Forest"],
-  },
-  {
-    name: "Backend",
-    icon: <Server size={20} />,
-    skills: ["FastAPI", "Node.js"],
-  },
-  {
-    name: "Databases",
-    icon: <Database size={20} />,
-    skills: ["MongoDB", "SQL", "Supabase"],
-  },
-  {
-    name: "Tools",
-    icon: <Wrench size={20} />,
-    skills: ["GitHub", "Figma", "Jupyter", "Colab"],
-  },
+  { name: "Programming", icon: <Code2 size={20} />, skills: ["Python", "C++", "JavaScript"] },
+  { name: "Machine Learning", icon: <Cpu size={20} />, skills: ["TensorFlow", "Scikit-learn", "XGBoost", "Pandas", "NumPy", "Random Forest"] },
+  { name: "Backend", icon: <Server size={20} />, skills: ["FastAPI", "Node.js"] },
+  { name: "Databases", icon: <Database size={20} />, skills: ["MongoDB", "SQL", "Supabase"] },
+  { name: "Tools", icon: <Wrench size={20} />, skills: ["GitHub", "Figma", "Jupyter", "Colab"] },
 ];
 
 const SkillsSection = () => (
-  <motion.section
-    id="skills"
-    className="py-28"
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, amount: 0.2 }}
-    transition={{ duration: 0.6, ease: [0.2, 0, 0, 1] as const }}
-  >
+  <section id="skills" className="py-32">
     <div className="section-container">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, ease: [0.2, 0, 0, 1] as const }}
-        className="mb-14"
-      >
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+      <ScrollReveal className="mb-16">
+        <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
           Skills & <span className="text-gradient">Technologies</span>
         </h2>
-        <p className="text-muted-foreground mt-2">Technologies I work with</p>
-      </motion.div>
+        <p className="text-muted-foreground mt-3 text-lg">Technologies I work with</p>
+      </ScrollReveal>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {categories.map((cat, i) => (
-          <motion.div
-            key={cat.name}
-            className="card-surface p-6 flex flex-col gap-4"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.08, ease: [0.2, 0, 0, 1] as const }}
-          >
-            <div className="flex items-center gap-3">
-              <div className="p-2 rounded-lg bg-accent/10 text-accent">
-                {cat.icon}
+          <ScrollReveal key={cat.name} delay={i * 0.08}>
+            <div className="glass-card p-6 flex flex-col gap-4 h-full">
+              <div className="flex items-center gap-3">
+                <div className="p-2 rounded-lg bg-primary/10 text-primary">
+                  {cat.icon}
+                </div>
+                <h3 className="text-sm font-bold uppercase tracking-wider text-foreground">
+                  {cat.name}
+                </h3>
               </div>
-              <h3 className="text-sm font-bold uppercase tracking-wider text-foreground">
-                {cat.name}
-              </h3>
+              <div className="flex flex-wrap gap-2">
+                {cat.skills.map((s) => (
+                  <span
+                    key={s}
+                    className="skill-badge px-3 py-1.5 rounded-lg bg-secondary/50 text-sm text-foreground border border-border/50 cursor-default"
+                  >
+                    {s}
+                  </span>
+                ))}
+              </div>
             </div>
-            <div className="flex flex-wrap gap-2">
-              {cat.skills.map((s) => (
-                <span
-                  key={s}
-                  className="skill-badge px-3 py-1.5 rounded-lg bg-muted/50 text-sm text-foreground border border-border/50 cursor-default"
-                >
-                  {s}
-                </span>
-              ))}
-            </div>
-          </motion.div>
+          </ScrollReveal>
         ))}
       </div>
     </div>
-  </motion.section>
+  </section>
 );
 
 export default SkillsSection;

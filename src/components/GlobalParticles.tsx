@@ -19,52 +19,44 @@ const GlobalParticles = () => {
       detectRetina: true,
       particles: {
         number: {
-          value: 120,
-          density: {
-            enable: true,
-            width: 1920,
-            height: 1080,
-          },
+          value: 100,
+          density: { enable: true, width: 1920, height: 1080 },
         },
         color: {
-          value: ["#33f0c3", "#4f9cff", "#7c8cff"],
+          value: ["#4F8CFF", "#22D3EE", "#7c8cff"],
         },
         links: {
           enable: true,
-          distance: 130,
-          color: ["#4f9cff", "#7c8cff"],
-          opacity: 0.12,
+          distance: 120,
+          color: "#4F8CFF",
+          opacity: 0.08,
           width: 1,
         },
         move: {
           enable: true,
-          speed: 0.45,
+          speed: 0.35,
           direction: "none" as const,
           random: true,
           straight: false,
           outModes: { default: "out" as const },
         },
         opacity: {
-          value: { min: 0.5, max: 0.95 },
-          animation: {
-            enable: true,
-            speed: 0.6,
-            sync: false,
-          },
+          value: { min: 0.3, max: 0.7 },
+          animation: { enable: true, speed: 0.5, sync: false },
         },
         size: {
-          value: { min: 0.9, max: 2.2 },
+          value: { min: 0.8, max: 2 },
         },
         shadow: {
-          color: "#4f9cff",
-          blur: 10,
+          color: "#4F8CFF",
+          blur: 8,
           enable: true,
         },
       },
       interactivity: {
         events: {
-          onHover: { enable: false, mode: "grab" as const },
-          onClick: { enable: false, mode: "push" as const },
+          onHover: { enable: false },
+          onClick: { enable: false },
           resize: { enable: true },
         },
       },
