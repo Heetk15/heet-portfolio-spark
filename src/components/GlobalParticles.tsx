@@ -1,11 +1,14 @@
-import { useCallback, useMemo } from "react";
-import Particles from "@tsparticles/react";
-import type { Engine } from "@tsparticles/engine";
+import { useState, useEffect, useMemo } from "react";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 
 const GlobalParticles = () => {
-  const particlesInit = useCallback(async (engine: Engine) => {
-    await loadSlim(engine);
+  const [init, setInit] = useState(false);
+
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine);
+    }).then(() => setInit(true));
   }, []);
 
   const options = useMemo(
@@ -60,8 +63,8 @@ const GlobalParticles = () => {
       },
       interactivity: {
         events: {
-          onHover: { enable: false, mode: "grab" },
-          onClick: { enable: false, mode: "push" },
+          onHover: { enable: false, mode: "grab" as const },
+          onClick: { enable: false, mode: "push" as const },
           resize: { enable: true },
         },
       },
@@ -71,10 +74,11 @@ const GlobalParticles = () => {
     [],
   );
 
+  if (!init) return null;
+
   return (
     <Particles
       id="global-particles"
-      init={particlesInit}
       options={options}
       className="global-particles-layer"
       aria-hidden="true"
