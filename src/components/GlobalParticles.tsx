@@ -36,7 +36,7 @@ const GlobalParticles = () => {
         move: {
           enable: true,
           speed: 0.45,
-          direction: "none",
+          direction: "none" as const,
           random: true,
           straight: false,
           outModes: { default: "out" },
