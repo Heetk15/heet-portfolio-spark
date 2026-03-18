@@ -24,9 +24,7 @@ const SectionDivider = () => (
 );
 
 const Index = () => (
-  <div className="min-h-screen bg-background relative">
-    <div className="gradient-mesh-bg" />
-
+  <div className="min-h-screen bg-transparent relative">
     <div className="relative z-10">
       <Navbar />
       <HeroSection />

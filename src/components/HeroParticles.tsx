@@ -16,7 +16,7 @@ const HeroParticles = () => {
       detectRetina: true,
       particles: {
         number: {
-          value: 60,
+          value: 80,
           density: { enable: true, width: 900, height: 600 },
         },
         color: {
@@ -24,18 +24,18 @@ const HeroParticles = () => {
         },
         links: {
           enable: true,
-          distance: 100,
+          distance: 95,
           color: "#93C5FD",
-          opacity: 0.05,
+          opacity: 0.06,
           width: 1,
         },
         move: {
           enable: true,
-          speed: 0.34,
+          speed: 0.3,
           outModes: { default: "bounce" },
         },
-        opacity: { value: 0.18 },
-        size: { value: { min: 0.7, max: 1.7 } },
+        opacity: { value: 0.2 },
+        size: { value: { min: 0.7, max: 1.8 } },
       },
       interactivity: {
         events: {
