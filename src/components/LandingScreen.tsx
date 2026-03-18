@@ -88,7 +88,7 @@ const LandingScreen = ({ entered }: LandingScreenProps) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: entered ? 1 : 0 }}
             transition={{ duration: 0.75, delay: entered ? 0.14 : 0, ease: "easeInOut" }}
-            style={{ background: "#0B0F1A" }}
+            style={{ background: "#020617" }}
           />
         </motion.div>
       )}

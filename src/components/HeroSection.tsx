@@ -16,7 +16,10 @@ const HeroSection = () => {
 
   return (
     <ScrollReveal>
-      <section className="min-h-[90vh] flex items-center pt-14 relative overflow-hidden">
+      <section
+        className="min-h-[90vh] flex items-center pt-14 relative overflow-hidden"
+        style={{ filter: "brightness(1.05)" }}
+      >
         <div className="section-container w-full">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
             <motion.div

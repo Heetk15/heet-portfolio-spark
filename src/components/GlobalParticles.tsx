@@ -23,7 +23,7 @@ const GlobalParticles = () => {
           density: { enable: true, width: 1920, height: 1080 },
         },
         color: {
-          value: ["#4F8CFF", "#22D3EE"],
+          value: "#4F8CFF",
         },
         links: {
           enable: true,
@@ -34,14 +34,14 @@ const GlobalParticles = () => {
         },
         move: {
           enable: true,
-          speed: 0.3,
+          speed: 0.4,
           direction: "none" as const,
           random: true,
           straight: false,
           outModes: { default: "out" as const },
         },
         opacity: {
-          value: { min: 0.15, max: 0.25 },
+          value: 0.2,
           animation: { enable: true, speed: 0.4, sync: false },
         },
         size: {
