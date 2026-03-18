@@ -13,12 +13,12 @@ const SectionDivider = () => (
     <motion.div
       className="h-px w-full"
       style={{
-        background: "linear-gradient(90deg, transparent, rgba(59,130,246,0.3), rgba(139,92,246,0.2), transparent)",
+        background: "linear-gradient(90deg, transparent, hsl(217 100% 65% / 0.25), hsl(187 94% 53% / 0.15), transparent)",
       }}
       initial={{ scaleX: 0 }}
       whileInView={{ scaleX: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.8, ease: [0.2, 0, 0, 1] as const }}
+      transition={{ duration: 1, ease: [0.2, 0, 0, 1] as const }}
     />
   </div>
 );
