@@ -32,7 +32,7 @@ const HeroParticles = () => {
         move: {
           enable: true,
           speed: 0.3,
-          outModes: { default: "bounce" },
+          outModes: { default: "bounce" as const },
         },
         opacity: { value: 0.2 },
         size: { value: { min: 0.7, max: 1.8 } },

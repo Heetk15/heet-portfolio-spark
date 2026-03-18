@@ -39,7 +39,7 @@ const GlobalParticles = () => {
           direction: "none" as const,
           random: true,
           straight: false,
-          outModes: { default: "out" },
+          outModes: { default: "out" as const },
         },
         opacity: {
           value: { min: 0.5, max: 0.95 },
