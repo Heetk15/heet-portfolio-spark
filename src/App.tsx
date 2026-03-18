@@ -27,9 +27,7 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <div className="app-layer-root">
-          <GlobalParticles />
-          <div className="grid-background" />
-          <div className="gradient-blobs" />
+          {entered && <GlobalParticles />}
           <div className="app-content-layer">
             <LandingScreen entered={entered} />
 

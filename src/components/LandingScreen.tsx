@@ -26,9 +26,19 @@ const LandingScreen = ({ entered }: LandingScreenProps) => {
         >
           <div className="absolute inset-0" style={{ background: "#EAF2FF" }} />
 
+          {entered && (
+            <motion.div
+              className="fixed inset-0 z-[120] pointer-events-none"
+              style={{ background: "#FFFFFF" }}
+              initial={{ opacity: 1 }}
+              animate={{ opacity: 0 }}
+              transition={{ duration: 0.18, ease: "easeInOut" }}
+            />
+          )}
+
           <div className="relative z-10 flex flex-col items-center">
             <motion.span
-              className="text-6xl sm:text-8xl md:text-9xl font-black tracking-tight leading-none"
+              className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-[0.08em] leading-none"
               style={{ color: "#0B0F1A" }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: entered ? 0 : 1, y: entered ? -100 : 0 }}
@@ -38,7 +48,7 @@ const LandingScreen = ({ entered }: LandingScreenProps) => {
             </motion.span>
 
             <motion.span
-              className="text-6xl sm:text-8xl md:text-9xl font-black tracking-tight leading-none -mt-1 sm:-mt-2"
+              className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-[0.08em] leading-none -mt-1"
               style={{ color: "#0B0F1A" }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: entered ? 0 : 1, y: entered ? 100 : 0 }}
@@ -48,7 +58,7 @@ const LandingScreen = ({ entered }: LandingScreenProps) => {
             </motion.span>
 
             <motion.p
-              className="mt-5 text-sm sm:text-base tracking-[0.4em] uppercase font-medium"
+              className="mt-6 text-xs sm:text-sm tracking-[0.5em] uppercase font-medium"
               style={{ color: "#4a5568" }}
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: entered ? 0 : 1, y: entered ? 30 : 0 }}

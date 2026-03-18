@@ -24,7 +24,12 @@ const SectionDivider = () => (
 );
 
 const Index = () => (
-  <div className="min-h-screen bg-transparent relative">
+  <div
+    className="min-h-screen relative"
+    style={{
+      background: "radial-gradient(circle at 50% 30%, rgba(79, 140, 255, 0.15), #0B0F1A 60%)",
+    }}
+  >
     <div className="relative z-10">
       <Navbar />
       <HeroSection />

@@ -29,7 +29,7 @@ const HeroSection = () => {
                 <div className="absolute -inset-12 rounded-full avatar-radial-light" />
                 <div
                   className="relative w-[340px] h-[340px] rounded-2xl overflow-hidden border border-border/40 avatar-float"
-                  style={{ boxShadow: "0 0 60px hsl(217 100% 65% / 0.15), inset 0 2px 20px rgba(0,0,0,0.3)" }}
+                  style={{ boxShadow: "0 0 120px rgba(79, 140, 255, 0.25), inset 0 2px 20px rgba(0,0,0,0.3)" }}
                 >
                   <img
                     src={avatar}
@@ -40,14 +40,14 @@ const HeroSection = () => {
               </div>
             </motion.div>
 
-            <div className="md:col-span-7 flex flex-col gap-6 text-center md:text-left">
+            <div className="md:col-span-7 flex flex-col gap-8 text-center md:text-left">
               <motion.h1
-                className="text-5xl md:text-7xl font-black tracking-tight"
+                className="text-6xl md:text-[5.5rem] font-bold tracking-tight"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.1, ease: [0.2, 0, 0, 1] as const }}
               >
-                <span className="hero-title-gradient">Heet Kothari</span>
+                <span style={{ color: "#E2E8F0" }}>Heet Kothari</span>
               </motion.h1>
 
               <motion.div
@@ -56,14 +56,15 @@ const HeroSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2, ease: [0.2, 0, 0, 1] as const }}
               >
-                <span className="text-xl md:text-2xl font-medium text-accent">
+                <span className="text-xl md:text-2xl font-medium" style={{ color: "#22D3EE" }}>
                   {typedText}
                 </span>
-                <span className="inline-block w-0.5 h-5 md:h-6 bg-accent ml-0.5 animate-pulse align-middle" />
+                <span className="inline-block w-0.5 h-5 md:h-6 ml-0.5 animate-pulse align-middle" style={{ background: "#4F8CFF" }} />
               </motion.div>
 
               <motion.p
-                className="max-w-[52ch] text-lg text-muted-foreground leading-relaxed mx-auto md:mx-0"
+                className="max-w-[54ch] text-lg leading-relaxed mx-auto md:mx-0"
+                style={{ color: "#94A3B8" }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3, ease: [0.2, 0, 0, 1] as const }}
