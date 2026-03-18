@@ -27,7 +27,7 @@ const Index = () => (
   <div
     className="min-h-screen relative"
     style={{
-      background: "radial-gradient(circle at 50% 30%, rgba(79, 140, 255, 0.15), #0B0F1A 60%)",
+      background: "radial-gradient(circle at 50% 20%, rgba(79, 140, 255, 0.25), transparent 40%), #0B0F1A",
     }}
   >
     <div className="relative z-10">

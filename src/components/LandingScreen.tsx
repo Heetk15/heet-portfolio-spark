@@ -32,14 +32,19 @@ const LandingScreen = ({ entered }: LandingScreenProps) => {
               style={{ background: "#FFFFFF" }}
               initial={{ opacity: 1 }}
               animate={{ opacity: 0 }}
-              transition={{ duration: 0.18, ease: "easeInOut" }}
+              transition={{ duration: 0.15, ease: "easeInOut" }}
             />
           )}
 
           <div className="relative z-10 flex flex-col items-center">
             <motion.span
-              className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-[0.08em] leading-none"
-              style={{ color: "#0B0F1A" }}
+              className="leading-none"
+              style={{
+                color: "#0B0F1A",
+                fontSize: "clamp(2.5rem, 6vw, 5rem)",
+                letterSpacing: "0.05em",
+                fontWeight: 600,
+              }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: entered ? 0 : 1, y: entered ? -100 : 0 }}
               transition={{ duration: 0.52, delay: entered ? 0.18 : 0.1, ease: "easeInOut" }}
@@ -48,8 +53,13 @@ const LandingScreen = ({ entered }: LandingScreenProps) => {
             </motion.span>
 
             <motion.span
-              className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-[0.08em] leading-none -mt-1"
-              style={{ color: "#0B0F1A" }}
+              className="leading-none -mt-1"
+              style={{
+                color: "#0B0F1A",
+                fontSize: "clamp(2.5rem, 6vw, 5rem)",
+                letterSpacing: "0.05em",
+                fontWeight: 600,
+              }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: entered ? 0 : 1, y: entered ? 100 : 0 }}
               transition={{ duration: 0.52, delay: entered ? 0.18 : 0.2, ease: "easeInOut" }}
@@ -58,8 +68,13 @@ const LandingScreen = ({ entered }: LandingScreenProps) => {
             </motion.span>
 
             <motion.p
-              className="mt-6 text-xs sm:text-sm tracking-[0.5em] uppercase font-medium"
-              style={{ color: "#4a5568" }}
+              className="mt-6 uppercase font-medium"
+              style={{
+                color: "#0B0F1A",
+                fontSize: "0.9rem",
+                letterSpacing: "0.4em",
+                opacity: 0.6,
+              }}
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: entered ? 0 : 1, y: entered ? 30 : 0 }}
               transition={{ duration: 0.45, delay: entered ? 0.16 : 0.3, ease: "easeInOut" }}

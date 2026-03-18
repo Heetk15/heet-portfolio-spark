@@ -29,7 +29,7 @@ const HeroSection = () => {
                 <div className="absolute -inset-12 rounded-full avatar-radial-light" />
                 <div
                   className="relative w-[340px] h-[340px] rounded-2xl overflow-hidden border border-border/40 avatar-float"
-                  style={{ boxShadow: "0 0 120px rgba(79, 140, 255, 0.25), inset 0 2px 20px rgba(0,0,0,0.3)" }}
+                  style={{ boxShadow: "0 0 200px rgba(79, 140, 255, 0.35), inset 0 2px 20px rgba(0,0,0,0.3)", transform: "scale(1.05)" }}
                 >
                   <img
                     src={avatar}
@@ -40,9 +40,9 @@ const HeroSection = () => {
               </div>
             </motion.div>
 
-            <div className="md:col-span-7 flex flex-col gap-8 text-center md:text-left">
+            <div className="md:col-span-7 flex flex-col gap-10 text-center md:text-left">
               <motion.h1
-                className="text-6xl md:text-[5.5rem] font-bold tracking-tight"
+                className="text-[clamp(3rem,7vw,6.9rem)] leading-[1.05] font-bold tracking-tight"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.1, ease: [0.2, 0, 0, 1] as const }}
@@ -56,7 +56,7 @@ const HeroSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2, ease: [0.2, 0, 0, 1] as const }}
               >
-                <span className="text-xl md:text-2xl font-medium" style={{ color: "#22D3EE" }}>
+                <span className="text-lg md:text-xl font-normal" style={{ color: "#4F8CFF" }}>
                   {typedText}
                 </span>
                 <span className="inline-block w-0.5 h-5 md:h-6 ml-0.5 animate-pulse align-middle" style={{ background: "#4F8CFF" }} />
