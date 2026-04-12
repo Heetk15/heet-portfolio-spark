@@ -13,13 +13,21 @@ import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
 
+const INTRO_KEY = "introPlayed";
+
 const App = () => {
-  const [entered, setEntered] = useState(false);
+  const [entered, setEntered] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return sessionStorage.getItem(INTRO_KEY) === "true";
+  });
 
   useEffect(() => {
+    if (sessionStorage.getItem(INTRO_KEY) === "true") return;
+
     const timeoutId = window.setTimeout(() => {
       setEntered(true);
-    }, 1500);
+      sessionStorage.setItem(INTRO_KEY, "true");
+    }, 1100);
 
     return () => window.clearTimeout(timeoutId);
   }, []);

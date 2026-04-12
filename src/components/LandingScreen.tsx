@@ -6,7 +6,7 @@ interface LandingScreenProps {
 }
 
 const LandingScreen = ({ entered }: LandingScreenProps) => {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(() => !entered);
 
   useEffect(() => {
     if (!entered) return;

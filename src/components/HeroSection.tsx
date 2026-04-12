@@ -32,15 +32,7 @@ const HeroSection = () => {
                   className="relative w-[340px] h-[340px] rounded-2xl overflow-hidden border border-white/10 avatar-float"
                   style={{ boxShadow: "0 0 40px rgba(34, 211, 238, 0.15)" }}
                 >
-                  {/* Developer workspace illustration placeholder */}
-                  <div className="w-full h-full bg-gradient-to-br from-secondary to-background flex items-center justify-center">
-                    <div className="flex flex-col items-center gap-3 text-muted-foreground">
-                      <div className="w-16 h-16 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
-                        <span className="text-2xl font-bold text-primary font-mono">&lt;/&gt;</span>
-                      </div>
-                      <span className="text-xs font-mono uppercase tracking-widest text-primary/60">Developer</span>
-                    </div>
-                  </div>
+                  <img src="/developer-workspace.png" alt="Developer Workspace" className="w-full h-full object-cover rounded-2xl opacity-90 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700 shadow-[0_0_30px_rgba(34,211,238,0.15)] border border-white/5" />
                 </div>
               </div>
             </motion.div>
@@ -90,7 +82,9 @@ const HeroSection = () => {
                   <ArrowDown size={16} /> View Projects
                 </a>
                 <a
-                  href="#"
+                  href="/Heet_Kothari_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hero-button glow-button inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-foreground font-medium text-sm"
                 >
                   <FileText size={16} /> Download Resume
