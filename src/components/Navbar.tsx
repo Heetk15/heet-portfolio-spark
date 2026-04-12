@@ -1,6 +1,7 @@
 import { Github, Linkedin, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
   { label: "Projects", href: "#projects" },
@@ -11,27 +12,36 @@ const navLinks = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 h-14 backdrop-blur-xl bg-background/60 border-b border-border/30">
       <div className="section-container h-full flex items-center justify-between">
-        <a href="#" className="text-lg font-bold tracking-tight text-foreground hover:text-accent transition-colors duration-300">
-          Heet Kothari
-        </a>
+        <Link to="/" className="text-lg font-bold tracking-tight text-foreground hover:text-primary transition-all duration-300">
+          HK.
+        </Link>
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
-          <div className="flex items-center gap-6">
-            {navLinks.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                className="nav-link text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
-              >
-                {l.label}
-              </a>
-            ))}
-          </div>
+          {isHome && (
+            <div className="flex items-center gap-6">
+              {navLinks.map((l) => (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  className="nav-link text-sm text-muted-foreground hover:text-foreground transition-all duration-300"
+                >
+                  {l.label}
+                </a>
+              ))}
+            </div>
+          )}
+          {!isHome && (
+            <Link to="/" className="text-sm text-muted-foreground hover:text-foreground transition-all duration-300">
+              ← Back to Portfolio
+            </Link>
+          )}
           <div className="flex items-center gap-1">
             {[
               { href: "https://github.com/Heetk15", icon: Github },
@@ -71,7 +81,7 @@ const Navbar = () => {
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
           >
-            {navLinks.map((l) => (
+            {isHome && navLinks.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
@@ -81,6 +91,11 @@ const Navbar = () => {
                 {l.label}
               </a>
             ))}
+            {!isHome && (
+              <Link to="/" onClick={() => setOpen(false)} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                ← Back to Portfolio
+              </Link>
+            )}
             <div className="flex gap-3 pt-2">
               <a href="https://github.com/Heetk15" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground"><Github size={18} /></a>
               <a href="https://linkedin.com/in/heet-kothari-03584a277" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground"><Linkedin size={18} /></a>

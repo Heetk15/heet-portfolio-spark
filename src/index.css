@@ -6,35 +6,35 @@
 
 @layer base {
   :root {
-    --background: 222 58% 6%;
+    --background: 222 47% 11%;
     --foreground: 214 32% 91%;
-    --card: 222 50% 9%;
+    --card: 222 47% 13%;
     --card-foreground: 214 32% 91%;
-    --popover: 222 50% 9%;
+    --popover: 222 47% 13%;
     --popover-foreground: 214 32% 91%;
-    --primary: 217 100% 65%;
-    --primary-foreground: 222 58% 6%;
-    --secondary: 220 40% 14%;
+    --primary: 187 94% 53%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 220 40% 16%;
     --secondary-foreground: 214 32% 91%;
-    --muted: 220 40% 14%;
+    --muted: 220 40% 16%;
     --muted-foreground: 215 20% 65%;
-    --accent: 187 94% 53%;
-    --accent-foreground: 222 58% 6%;
+    --accent: 217 100% 65%;
+    --accent-foreground: 222 47% 11%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 214 32% 91%;
-    --border: 220 30% 16%;
-    --input: 220 30% 16%;
-    --ring: 217 100% 65%;
+    --border: 220 30% 18%;
+    --input: 220 30% 18%;
+    --ring: 187 94% 53%;
     --radius: 0.75rem;
 
-    --sidebar-background: 222 58% 6%;
+    --sidebar-background: 222 47% 11%;
     --sidebar-foreground: 214 32% 91%;
-    --sidebar-primary: 217 100% 65%;
+    --sidebar-primary: 187 94% 53%;
     --sidebar-primary-foreground: 214 32% 91%;
-    --sidebar-accent: 220 40% 14%;
+    --sidebar-accent: 220 40% 16%;
     --sidebar-accent-foreground: 214 32% 91%;
-    --sidebar-border: 220 30% 16%;
-    --sidebar-ring: 217 100% 65%;
+    --sidebar-border: 220 30% 18%;
+    --sidebar-ring: 187 94% 53%;
   }
 }
 
@@ -67,6 +67,11 @@
 @keyframes grid-shift {
   0% { background-position: 0 0, 0 0; }
   100% { background-position: 60px 60px, 60px 60px; }
+}
+
+@keyframes particle-pulse {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.4; }
 }
 
 .avatar-float {
@@ -102,10 +107,10 @@
   position: fixed;
   inset: 0;
   z-index: 1;
-  opacity: 0.035;
+  opacity: 0.03;
   background-image:
-    repeating-linear-gradient(0deg, hsl(var(--primary) / 0.1) 0px, hsl(var(--primary) / 0.1) 1px, transparent 1px, transparent 60px),
-    repeating-linear-gradient(90deg, hsl(var(--accent) / 0.08) 0px, hsl(var(--accent) / 0.08) 1px, transparent 1px, transparent 60px);
+    repeating-linear-gradient(0deg, hsl(var(--primary) / 0.08) 0px, hsl(var(--primary) / 0.08) 1px, transparent 1px, transparent 60px),
+    repeating-linear-gradient(90deg, hsl(var(--primary) / 0.06) 0px, hsl(var(--primary) / 0.06) 1px, transparent 1px, transparent 60px);
   pointer-events: none;
   animation: grid-shift 40s linear infinite;
 }
@@ -126,20 +131,20 @@
   height: 36rem;
   border-radius: 9999px;
   filter: blur(140px);
-  opacity: 0.07;
+  opacity: 0.06;
   animation: blob-drift 28s ease-in-out infinite alternate;
 }
 
 .gradient-blobs::before {
   top: -14%;
   left: -12%;
-  background: radial-gradient(circle, hsl(var(--primary) / 0.35) 0%, hsl(var(--primary) / 0.06) 65%, transparent 100%);
+  background: radial-gradient(circle, hsl(var(--primary) / 0.3) 0%, hsl(var(--primary) / 0.06) 65%, transparent 100%);
 }
 
 .gradient-blobs::after {
   right: -14%;
   bottom: -16%;
-  background: radial-gradient(circle, hsl(var(--accent) / 0.3) 0%, hsl(var(--accent) / 0.06) 65%, transparent 100%);
+  background: radial-gradient(circle, hsl(var(--accent) / 0.25) 0%, hsl(var(--accent) / 0.06) 65%, transparent 100%);
   animation-delay: -12s;
 }
 
@@ -147,27 +152,27 @@
 
 @layer utilities {
   .glass-card {
-    @apply rounded-2xl border border-border/40;
-    background: hsl(var(--card) / 0.55);
+    @apply rounded-2xl border border-white/10;
+    background: hsl(222 47% 13% / 0.4);
     backdrop-filter: blur(16px) saturate(1.3);
-    box-shadow: 0 0 0 1px hsl(var(--primary) / 0.06), 0 2px 12px hsl(var(--background) / 0.5);
-    transition: all 0.4s cubic-bezier(0.2, 0, 0, 1);
+    box-shadow: 0 0 0 1px hsl(var(--primary) / 0.04), 0 2px 12px hsl(var(--background) / 0.5);
+    transition: all 0.3s ease;
   }
   .glass-card:hover {
-    box-shadow: 0 0 0 1px hsl(var(--primary) / 0.2), 0 12px 32px hsl(var(--primary) / 0.1), 0 4px 16px hsl(var(--background) / 0.4);
+    box-shadow: 0 0 0 1px hsl(var(--primary) / 0.15), 0 12px 32px hsl(var(--primary) / 0.08), 0 4px 16px hsl(var(--background) / 0.4);
     transform: translateY(-4px);
-    border-color: hsl(var(--primary) / 0.25);
+    border-color: hsl(var(--primary) / 0.2);
   }
 
   .project-card {
     @apply relative overflow-hidden;
-    transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.4s cubic-bezier(0.2, 0, 0, 1), border-color 0.4s cubic-bezier(0.2, 0, 0, 1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   }
   .project-card::before {
     content: '';
     @apply absolute inset-0 rounded-2xl opacity-0;
     box-shadow: 0 0 0 1px hsl(var(--primary) / 0.4), 0 0 30px hsl(var(--primary) / 0.15);
-    transition: opacity 0.4s cubic-bezier(0.2, 0, 0, 1);
+    transition: opacity 0.3s ease;
     pointer-events: none;
   }
   .group:hover .project-card {
@@ -180,7 +185,7 @@
   }
 
   .skill-badge {
-    transition: transform 0.25s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.25s cubic-bezier(0.2, 0, 0, 1), border-color 0.25s cubic-bezier(0.2, 0, 0, 1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     will-change: transform;
   }
   .skill-badge:hover {
@@ -200,14 +205,26 @@
 
   .hero-button {
     @apply border border-primary/20 backdrop-blur-sm;
-    background: linear-gradient(135deg, hsl(var(--primary) / 0.4), hsl(var(--accent) / 0.25));
-    box-shadow: 0 6px 20px hsl(var(--primary) / 0.15);
-    transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.3s cubic-bezier(0.2, 0, 0, 1), border-color 0.3s cubic-bezier(0.2, 0, 0, 1);
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.15), hsl(var(--accent) / 0.1));
+    box-shadow: 0 6px 20px hsl(var(--primary) / 0.1);
+    transition: all 0.3s ease;
   }
   .hero-button:hover {
-    transform: translateY(-3px) scale(1.03);
-    border-color: hsl(var(--accent) / 0.5);
-    box-shadow: 0 12px 30px hsl(var(--primary) / 0.25), 0 0 36px hsl(var(--accent) / 0.15);
+    transform: translateY(-3px) scale(1.05);
+    border-color: hsl(var(--primary) / 0.5);
+    box-shadow: 0 12px 30px hsl(var(--primary) / 0.2), 0 0 36px hsl(var(--primary) / 0.1);
+  }
+
+  .cta-button {
+    @apply px-6 py-3.5 rounded-xl font-semibold text-sm;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px hsl(var(--primary) / 0.3);
+  }
+  .cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px hsl(var(--primary) / 0.4), 0 0 40px hsl(var(--primary) / 0.15);
   }
 
   .section-container {
@@ -221,7 +238,7 @@
     content: '';
     @apply absolute -bottom-0.5 left-0 h-[2px] w-0 rounded-full;
     background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)));
-    transition: width 0.3s cubic-bezier(0.2, 0, 0, 1);
+    transition: width 0.3s ease;
   }
   .nav-link:hover::after {
     @apply w-full;
