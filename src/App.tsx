@@ -8,6 +8,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import GlobalParticles from "@/components/GlobalParticles";
 import LandingScreen from "@/components/LandingScreen";
 import Index from "./pages/Index.tsx";
+import MindBridgeProject from "./pages/MindBridgeProject.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,8 @@ const App = () => {
       <TooltipProvider>
         <div className="app-layer-root">
           {entered && <GlobalParticles />}
+          <div className="grid-background" />
+          <div className="gradient-blobs" />
           <div className="app-content-layer">
             <LandingScreen entered={entered} />
 
@@ -42,6 +45,7 @@ const App = () => {
                 <BrowserRouter>
                   <Routes>
                     <Route path="/" element={<Index />} />
+                    <Route path="/projects/mindbridge" element={<MindBridgeProject />} />
                     <Route path="*" element={<NotFound />} />
                   </Routes>
                 </BrowserRouter>

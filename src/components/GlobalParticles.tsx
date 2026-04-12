@@ -19,37 +19,40 @@ const GlobalParticles = () => {
       detectRetina: true,
       particles: {
         number: {
-          value: 60,
+          value: 80,
           density: { enable: true, width: 1920, height: 1080 },
         },
         color: {
-          value: "#4F8CFF",
+          value: ["#22D3EE", "#4F8CFF", "#E2E8F0"],
+        },
+        shape: {
+          type: "circle" as const,
         },
         links: {
           enable: true,
-          distance: 130,
-          color: "#4F8CFF",
-          opacity: 0.08,
+          distance: 120,
+          color: "#22D3EE",
+          opacity: 0.06,
           width: 1,
         },
         move: {
           enable: true,
-          speed: 0.4,
+          speed: 0.25,
           direction: "none" as const,
           random: true,
           straight: false,
           outModes: { default: "out" as const },
         },
         opacity: {
-          value: 0.2,
-          animation: { enable: true, speed: 0.4, sync: false },
+          value: { min: 0.1, max: 0.4 },
+          animation: { enable: true, speed: 0.3, sync: false },
         },
         size: {
-          value: { min: 0.7, max: 1.7 },
+          value: { min: 1, max: 3 },
         },
         shadow: {
-          color: "#4F8CFF",
-          blur: 8,
+          color: "#22D3EE",
+          blur: 6,
           enable: true,
         },
       },
