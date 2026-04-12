@@ -13,7 +13,7 @@ const SectionDivider = () => (
     <motion.div
       className="h-px w-full"
       style={{
-        background: "linear-gradient(90deg, transparent, hsl(217 100% 65% / 0.25), hsl(187 94% 53% / 0.15), transparent)",
+        background: "linear-gradient(90deg, transparent, hsl(187 94% 53% / 0.2), hsl(217 100% 65% / 0.15), transparent)",
       }}
       initial={{ scaleX: 0 }}
       whileInView={{ scaleX: 1 }}
@@ -24,12 +24,7 @@ const SectionDivider = () => (
 );
 
 const Index = () => (
-  <div
-    className="min-h-screen relative"
-    style={{
-      background: "radial-gradient(circle at 50% 20%, rgba(79, 140, 255, 0.25), transparent 45%), #020617",
-    }}
-  >
+  <div className="min-h-screen relative">
     <div className="relative z-10">
       <Navbar />
       <HeroSection />

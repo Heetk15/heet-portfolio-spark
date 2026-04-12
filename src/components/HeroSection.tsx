@@ -17,7 +17,6 @@ const HeroSection = () => {
     <ScrollReveal>
       <section
         className="min-h-[90vh] flex items-center pt-14 relative overflow-hidden"
-        style={{ filter: "brightness(1.05)" }}
       >
         <div className="section-container w-full">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
@@ -30,22 +29,23 @@ const HeroSection = () => {
               <div className="relative">
                 <div className="absolute -inset-12 rounded-full avatar-radial-light" />
                 <div
-                  className="relative w-[340px] h-[340px] rounded-2xl overflow-hidden border border-border/40 avatar-float"
-                  style={{ boxShadow: "0 0 200px rgba(79, 140, 255, 0.35), inset 0 2px 20px rgba(0,0,0,0.3)", transform: "scale(1.05)" }}
+                  className="relative w-[340px] h-[340px] rounded-2xl overflow-hidden border border-white/10 avatar-float"
+                  style={{ boxShadow: "0 0 40px rgba(34, 211, 238, 0.15)" }}
                 >
-                  <img src="/developer-workspace.png" alt="Developer Workspace" className="w-full h-full object-cover rounded-2xl opacity-85 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700 shadow-[0_0_40px_rgba(34,211,238,0.15)] border border-cyan-400/10" />
+                  <img src="/developer-workspace.png" alt="Developer Workspace" className="w-full h-full object-cover rounded-2xl opacity-90 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700 shadow-[0_0_30px_rgba(34,211,238,0.15)] border border-white/5" />
                 </div>
               </div>
             </motion.div>
 
             <div className="md:col-span-7 flex flex-col gap-10 text-center md:text-left">
               <motion.h1
-                className="text-[clamp(3rem,7vw,6.9rem)] leading-[1.05] font-bold tracking-tight"
+                className="text-[clamp(2.5rem,6vw,5.5rem)] leading-[1.1] font-bold tracking-tight"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.1, ease: [0.2, 0, 0, 1] as const }}
               >
-                <span style={{ color: "#E2E8F0" }}>Heet Kothari</span>
+                <span className="text-foreground">Hi, I'm </span>
+                <span className="text-gradient">Heet Kothari.</span>
               </motion.h1>
 
               <motion.div
@@ -54,15 +54,14 @@ const HeroSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2, ease: [0.2, 0, 0, 1] as const }}
               >
-                <span className="text-lg md:text-xl font-normal" style={{ color: "#4F8CFF" }}>
+                <span className="text-lg md:text-xl font-normal text-primary">
                   {typedText}
                 </span>
-                <span className="inline-block w-0.5 h-5 md:h-6 ml-0.5 animate-pulse align-middle" style={{ background: "#4F8CFF" }} />
+                <span className="inline-block w-0.5 h-5 md:h-6 ml-0.5 animate-pulse align-middle bg-primary" />
               </motion.div>
 
               <motion.p
-                className="max-w-[54ch] text-lg leading-relaxed mx-auto md:mx-0"
-                style={{ color: "#94A3B8" }}
+                className="max-w-[54ch] text-lg leading-relaxed mx-auto md:mx-0 text-muted-foreground"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3, ease: [0.2, 0, 0, 1] as const }}
@@ -83,14 +82,16 @@ const HeroSection = () => {
                   <ArrowDown size={16} /> View Projects
                 </a>
                 <a
-                  href="#"
+                  href="/Heet_Kothari_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hero-button glow-button inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-foreground font-medium text-sm"
                 >
                   <FileText size={16} /> Download Resume
                 </a>
                 <a
                   href="#contact"
-                  className="hero-button glow-button inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-foreground font-medium text-sm"
+                  className="cta-button inline-flex items-center gap-2"
                 >
                   <Mail size={16} /> Contact Me
                 </a>

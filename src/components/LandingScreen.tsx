@@ -44,7 +44,6 @@ const LandingScreen = ({ entered }: LandingScreenProps) => {
                 fontSize: "clamp(2.5rem, 6vw, 5rem)",
                 letterSpacing: "0.05em",
                 fontWeight: 600,
-                willChange: "transform, opacity",
               }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: entered ? 0 : 1, y: entered ? -100 : 0 }}
@@ -60,7 +59,6 @@ const LandingScreen = ({ entered }: LandingScreenProps) => {
                 fontSize: "clamp(2.5rem, 6vw, 5rem)",
                 letterSpacing: "0.05em",
                 fontWeight: 600,
-                willChange: "transform, opacity",
               }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: entered ? 0 : 1, y: entered ? 100 : 0 }}
@@ -76,7 +74,6 @@ const LandingScreen = ({ entered }: LandingScreenProps) => {
                 fontSize: "0.9rem",
                 letterSpacing: "0.4em",
                 opacity: 0.6,
-                willChange: "transform, opacity",
               }}
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: entered ? 0 : 1, y: entered ? 30 : 0 }}
