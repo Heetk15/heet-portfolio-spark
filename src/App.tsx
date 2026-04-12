@@ -8,26 +8,17 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import GlobalParticles from "@/components/GlobalParticles";
 import LandingScreen from "@/components/LandingScreen";
 import Index from "./pages/Index.tsx";
-import MindBridgeProject from "./pages/MindBridgeProject.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
 
-const INTRO_KEY = "introPlayed";
-
 const App = () => {
-  const [entered, setEntered] = useState(() => {
-    if (typeof window === "undefined") return false;
-    return sessionStorage.getItem(INTRO_KEY) === "true";
-  });
+  const [entered, setEntered] = useState(false);
 
   useEffect(() => {
-    if (sessionStorage.getItem(INTRO_KEY) === "true") return;
-
     const timeoutId = window.setTimeout(() => {
       setEntered(true);
-      sessionStorage.setItem(INTRO_KEY, "true");
-    }, 1100);
+    }, 1500);
 
     return () => window.clearTimeout(timeoutId);
   }, []);
@@ -37,15 +28,13 @@ const App = () => {
       <TooltipProvider>
         <div className="app-layer-root">
           {entered && <GlobalParticles />}
-          <div className="grid-background" />
-          <div className="gradient-blobs" />
           <div className="app-content-layer">
             <LandingScreen entered={entered} />
 
             {entered && (
               <motion.div
-                initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
-                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.28, duration: 0.65, ease: "easeInOut" }}
               >
                 <Toaster />
@@ -53,7 +42,6 @@ const App = () => {
                 <BrowserRouter>
                   <Routes>
                     <Route path="/" element={<Index />} />
-                    <Route path="/projects/mindbridge" element={<MindBridgeProject />} />
                     <Route path="*" element={<NotFound />} />
                   </Routes>
                 </BrowserRouter>

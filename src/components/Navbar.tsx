@@ -18,8 +18,22 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 h-14 backdrop-blur-xl bg-background/60 border-b border-border/30">
       <div className="section-container h-full flex items-center justify-between">
-        <Link to="/" className="text-lg font-bold tracking-tight text-foreground hover:text-primary transition-all duration-300">
-          HK.
+        <Link to="/" aria-label="Heet Kothari" className="text-foreground hover:text-primary transition-all duration-300">
+          <svg
+            viewBox="0 0 120 48"
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-8 w-auto text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] hover:opacity-80 transition-opacity cursor-pointer"
+            fill="none"
+          >
+            <path d="M8 40V8C8 5.8 9.8 4 12 4H16C18.2 4 20 5.8 20 8V20" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M44 40V8C44 5.8 45.8 4 48 4H52C54.2 4 56 5.8 56 8V20" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M20 24C32 22.5 44 22 56 20" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M64 40L82 22" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M64 8L82 22" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M82 22L112 6" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M96 10L112 6L102 20" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M82 22L110 40" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
         </Link>
 
         {/* Desktop */}

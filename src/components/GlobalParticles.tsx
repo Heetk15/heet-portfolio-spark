@@ -4,11 +4,22 @@ import { loadSlim } from "@tsparticles/slim";
 
 const GlobalParticles = () => {
   const [init, setInit] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
     }).then(() => setInit(true));
+  }, []);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    const onChange = (event: MediaQueryListEvent) => setIsSmallScreen(event.matches);
+
+    setIsSmallScreen(mediaQuery.matches);
+    mediaQuery.addEventListener("change", onChange);
+
+    return () => mediaQuery.removeEventListener("change", onChange);
   }, []);
 
   const options = useMemo(
@@ -19,7 +30,7 @@ const GlobalParticles = () => {
       detectRetina: true,
       particles: {
         number: {
-          value: 80,
+          value: isSmallScreen ? 30 : 40,
           density: { enable: true, width: 1920, height: 1080 },
         },
         color: {
@@ -66,7 +77,7 @@ const GlobalParticles = () => {
       pauseOnBlur: true,
       pauseOnOutsideViewport: true,
     }),
-    [],
+    [isSmallScreen],
   );
 
   if (!init) return null;
