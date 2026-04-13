@@ -20,16 +20,16 @@ const Navbar = () => {
       <div className="section-container h-full flex items-center justify-between">
         <Link to="/" className="block">
           <div
-            className="h-8 w-10 bg-primary drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] hover:opacity-80 transition-all cursor-pointer"
+            className="h-10 w-28 bg-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] hover:opacity-80 transition-all cursor-pointer"
             style={{
               WebkitMaskImage: "url('/logo.png')",
               WebkitMaskSize: "contain",
               WebkitMaskRepeat: "no-repeat",
-              WebkitMaskPosition: "center",
+              WebkitMaskPosition: "left center",
               maskImage: "url('/logo.png')",
               maskSize: "contain",
               maskRepeat: "no-repeat",
-              maskPosition: "center",
+              maskPosition: "left center",
             }}
             aria-label="Heet Kothari Logo"
           />
