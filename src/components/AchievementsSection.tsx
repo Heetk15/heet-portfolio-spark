@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const achievements = [
-  { badge: "Hackathon Finalist", title: "LaserHack", detail: "Lasell University" },
+  { badge: "Finalist", title: "LaserHack", detail: "Lasell University (USA)" },
   { badge: "Finalist", title: "Odoo Hackathon", detail: "Top teams among 1900" },
   { badge: "Finalist", title: "Aftermath Hackathon", detail: "1000+ teams" },
 ];
