@@ -19,19 +19,10 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 h-14 backdrop-blur-xl bg-background/60 border-b border-border/30">
       <div className="section-container h-full flex items-center justify-between">
         <Link to="/" className="block">
-          <div
-            className="h-10 w-28 bg-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] hover:opacity-80 transition-all cursor-pointer"
-            style={{
-              WebkitMaskImage: "url('/logo.png')",
-              WebkitMaskSize: "contain",
-              WebkitMaskRepeat: "no-repeat",
-              WebkitMaskPosition: "left center",
-              maskImage: "url('/logo.png')",
-              maskSize: "contain",
-              maskRepeat: "no-repeat",
-              maskPosition: "left center",
-            }}
-            aria-label="Heet Kothari Logo"
+          <img 
+            src="/logo.png" 
+            alt="Heet Logo" 
+            className="h-6 sm:h-8 w-auto object-contain hover:opacity-80 transition-opacity drop-shadow-[0_0_8px_rgba(34,211,238,0.3)]" 
           />
         </Link>
 
