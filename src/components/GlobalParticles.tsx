@@ -19,7 +19,7 @@ const GlobalParticles = () => {
       detectRetina: true,
       particles: {
         number: {
-          value: 80,
+          value: 30,
           density: { enable: true, width: 1920, height: 1080 },
         },
         color: {
