@@ -9,7 +9,7 @@ const interests = [
 ];
 
 const AboutSection = () => (
-  <section id="about" className="py-32">
+  <section id="about" className="py-16 md:py-20">
     <div className="section-container">
       <ScrollReveal className="mb-16">
         <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">

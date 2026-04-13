@@ -44,9 +44,9 @@ const App = () => {
 
             {entered && (
               <motion.div
-                initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
-                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                transition={{ delay: 0.28, duration: 0.65, ease: "easeInOut" }}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.4, ease: "easeOut" }}
               >
                 <Toaster />
                 <Sonner />
