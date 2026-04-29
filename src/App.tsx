@@ -9,6 +9,7 @@ import GlobalParticles from "@/components/GlobalParticles";
 import LandingScreen from "@/components/LandingScreen";
 import Index from "./pages/Index.tsx";
 import MindBridgeProject from "./pages/MindBridgeProject.tsx";
+import DigiLockerProject from "./pages/DigiLockerProject.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -54,6 +55,7 @@ const App = () => {
                   <Routes>
                     <Route path="/" element={<Index />} />
                     <Route path="/projects/mindbridge" element={<MindBridgeProject />} />
+                    <Route path="/project/digilocker" element={<DigiLockerProject />} />
                     <Route path="*" element={<NotFound />} />
                   </Routes>
                 </BrowserRouter>

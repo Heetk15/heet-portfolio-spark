@@ -16,9 +16,19 @@ import {
   Zap,
   Volume2,
 } from "lucide-react";
+import { toast } from "sonner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import ProjectGallery, { GalleryImage } from "@/components/ProjectGallery";
+
+const galleryImages: GalleryImage[] = [
+  { src: "/placeholder.svg", caption: "Dashboard View" },
+  { src: "/placeholder.svg", caption: "Dark Mode UI" },
+  { src: "/placeholder.svg", caption: "Settings Panel" },
+  { src: "/placeholder.svg", caption: "Mobile Responsive" },
+  { src: "/placeholder.svg", caption: "User Profile" },
+];
 
 /* ── Section A: Hero ────────────────────────── */
 const Hero = () => (
@@ -36,12 +46,13 @@ const Hero = () => (
 
       <ScrollReveal delay={0.15}>
         <div className="flex flex-wrap gap-4 justify-center mt-4">
-          <a
-            href="#"
+          <button
+            type="button"
+            onClick={() => toast("Demo currently not available")}
             className="cta-button inline-flex items-center gap-2"
           >
             <ExternalLink size={16} /> View Live Demo
-          </a>
+          </button>
           <Link
             to="/"
             className="hero-button glow-button inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-foreground font-medium text-sm"
@@ -281,6 +292,7 @@ const MindBridgeProject = () => (
       <CoreFeatures />
       <ArchitectureFlow />
       <FutureScope />
+      <ProjectGallery images={galleryImages} />
       <Footer />
     </div>
   </div>
