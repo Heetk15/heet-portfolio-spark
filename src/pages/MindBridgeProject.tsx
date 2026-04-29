@@ -46,12 +46,13 @@ const Hero = () => (
 
       <ScrollReveal delay={0.15}>
         <div className="flex flex-wrap gap-4 justify-center mt-4">
-          <a
-            href="#"
+          <button
+            type="button"
+            onClick={() => toast("Demo currently not available")}
             className="cta-button inline-flex items-center gap-2"
           >
             <ExternalLink size={16} /> View Live Demo
-          </a>
+          </button>
           <Link
             to="/"
             className="hero-button glow-button inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-foreground font-medium text-sm"
