@@ -9,7 +9,7 @@ const socials = [
 ];
 
 const ContactSection = () => (
-  <section id="contact" className="py-16 md:py-20 relative">
+  <section id="contact" className="py-14 md:py-16 relative">
     <div className="absolute inset-0 bg-gradient-to-t from-primary/5 via-transparent to-transparent pointer-events-none" />
 
     <div className="section-container relative text-center flex flex-col items-center gap-8">

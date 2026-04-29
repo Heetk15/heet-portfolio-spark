@@ -6,6 +6,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import GlobalParticles from "@/components/GlobalParticles";
+import ScrollToTop from "@/components/ScrollToTop";
 import LandingScreen from "@/components/LandingScreen";
 import Index from "./pages/Index.tsx";
 import MindBridgeProject from "./pages/MindBridgeProject.tsx";
@@ -52,6 +53,7 @@ const App = () => {
                 <Toaster />
                 <Sonner />
                 <BrowserRouter>
+                  <ScrollToTop />
                   <Routes>
                     <Route path="/" element={<Index />} />
                     <Route path="/projects/mindbridge" element={<MindBridgeProject />} />

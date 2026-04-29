@@ -8,10 +8,20 @@ export interface GalleryImage {
 
 interface ProjectGalleryProps {
   images: GalleryImage[];
+  aspectClass?: string;
+  imageClassName?: string;
+  frameClassName?: string;
+  cardClassName?: string;
 }
 
-const ProjectGallery = ({ images }: ProjectGalleryProps) => (
-  <section className="py-20">
+const ProjectGallery = ({
+  images,
+  aspectClass = "aspect-video",
+  imageClassName = "object-cover",
+  frameClassName,
+  cardClassName,
+}: ProjectGalleryProps) => (
+  <section className="py-16">
     <div className="section-container">
       <ScrollReveal className="mb-10">
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
@@ -24,12 +34,20 @@ const ProjectGallery = ({ images }: ProjectGalleryProps) => (
           {images.map((img, i) => (
             <Dialog key={i}>
               <DialogTrigger asChild>
-                <div className="flex-none w-[80vw] sm:w-[400px] snap-center bg-white/5 rounded-xl border border-cyan-400/10 cursor-pointer group hover:border-cyan-400/30 transition-colors overflow-hidden">
-                  <div className="overflow-hidden rounded-t-xl">
+                <div
+                  className={`flex-none w-[80vw] sm:w-[400px] snap-center bg-white/5 rounded-xl border border-cyan-400/10 cursor-pointer group hover:border-cyan-400/30 transition-colors overflow-hidden ${
+                    cardClassName ?? ""
+                  }`}
+                >
+                  <div
+                    className={`overflow-hidden rounded-t-xl ${
+                      frameClassName ? frameClassName : aspectClass
+                    }`}
+                  >
                     <img
                       src={img.src}
                       alt={img.caption}
-                      className="aspect-video w-full object-cover rounded-t-xl group-hover:scale-[1.02] transition-transform duration-500"
+                      className={`h-full w-full rounded-t-xl group-hover:scale-[1.02] transition-transform duration-500 ${imageClassName}`}
                     />
                   </div>
                   <div className="p-3">

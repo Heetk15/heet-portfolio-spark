@@ -40,7 +40,7 @@ const galleryImages: GalleryImage[] = [
 
 /* ── Section A: Hero ────────────────────────── */
 const Hero = () => (
-  <section className="pt-28 pb-20">
+  <section className="pt-28 pb-16">
     <div className="section-container text-center flex flex-col items-center gap-8">
       <ScrollReveal>
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-foreground">
@@ -75,7 +75,7 @@ const Hero = () => (
 
 /* ── Section B: Challenge & Solution ─────────── */
 const ChallengeAndSolution = () => (
-  <section className="py-20">
+  <section className="py-16">
     <div className="section-container">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         <ScrollReveal>
@@ -112,7 +112,7 @@ const ChallengeAndSolution = () => (
 const techStack = ["React", "Node.js", "Express", "MongoDB", "Groq AI", "Twilio", "Socket.io"];
 
 const TechStack = () => (
-  <section className="py-20">
+  <section className="py-16">
     <div className="section-container">
       <ScrollReveal className="mb-10">
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
@@ -165,7 +165,7 @@ const features = [
 ];
 
 const CoreFeatures = () => (
-  <section className="py-20">
+  <section className="py-16">
     <div className="section-container">
       <ScrollReveal className="mb-10">
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
@@ -200,7 +200,7 @@ const steps = [
 ];
 
 const ArchitectureFlow = () => (
-  <section className="py-20">
+  <section className="py-16">
     <div className="section-container">
       <ScrollReveal className="mb-10">
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
@@ -264,7 +264,7 @@ const futureItems = [
 ];
 
 const FutureScope = () => (
-  <section className="py-20">
+  <section className="py-16">
     <div className="section-container">
       <ScrollReveal className="mb-10">
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
@@ -297,10 +297,10 @@ const MindBridgeProject = () => (
       <Hero />
       <ChallengeAndSolution />
       <TechStack />
+      <ProjectGallery images={galleryImages} />
       <CoreFeatures />
       <ArchitectureFlow />
       <FutureScope />
-      <ProjectGallery images={galleryImages} />
       <Footer />
     </div>
   </div>

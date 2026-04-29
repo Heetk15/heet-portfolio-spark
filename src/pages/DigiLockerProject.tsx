@@ -32,7 +32,7 @@ const galleryImages: GalleryImage[] = [
 
 /* ── Hero ─────────────────────────────────── */
 const Hero = () => (
-  <section className="pt-28 pb-20">
+  <section className="pt-28 pb-16">
     <div className="section-container text-center flex flex-col items-center gap-8">
       <ScrollReveal>
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-foreground">
@@ -73,7 +73,7 @@ const roleItems = [
 ];
 
 const RoleScope = () => (
-  <section className="py-20">
+  <section className="py-16">
     <div className="section-container">
       <ScrollReveal className="mb-10">
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
@@ -128,7 +128,7 @@ const features = [
 ];
 
 const KeyFeatures = () => (
-  <section className="py-20">
+  <section className="py-16">
     <div className="section-container">
       <ScrollReveal className="mb-10">
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
@@ -159,8 +159,13 @@ const DigiLockerProject = () => (
       <Navbar />
       <Hero />
       <RoleScope />
+      <ProjectGallery
+        images={galleryImages}
+        frameClassName="h-64 sm:h-72"
+        imageClassName="object-contain bg-[#0b1220]"
+        cardClassName="w-[72vw] sm:w-[320px]"
+      />
       <KeyFeatures />
-      <ProjectGallery images={galleryImages} />
       <Footer />
     </div>
   </div>
