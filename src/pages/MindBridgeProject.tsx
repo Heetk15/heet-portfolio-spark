@@ -292,6 +292,7 @@ const MindBridgeProject = () => (
       <CoreFeatures />
       <ArchitectureFlow />
       <FutureScope />
+      <ProjectGallery images={galleryImages} />
       <Footer />
     </div>
   </div>
