@@ -55,6 +55,7 @@ const App = () => {
                   <Routes>
                     <Route path="/" element={<Index />} />
                     <Route path="/projects/mindbridge" element={<MindBridgeProject />} />
+                    <Route path="/project/digilocker" element={<DigiLockerProject />} />
                     <Route path="*" element={<NotFound />} />
                   </Routes>
                 </BrowserRouter>
