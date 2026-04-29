@@ -16,9 +16,19 @@ import {
   Zap,
   Volume2,
 } from "lucide-react";
+import { toast } from "sonner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import ProjectGallery, { GalleryImage } from "@/components/ProjectGallery";
+
+const galleryImages: GalleryImage[] = [
+  { src: "/placeholder.svg", caption: "Dashboard View" },
+  { src: "/placeholder.svg", caption: "Dark Mode UI" },
+  { src: "/placeholder.svg", caption: "Settings Panel" },
+  { src: "/placeholder.svg", caption: "Mobile Responsive" },
+  { src: "/placeholder.svg", caption: "User Profile" },
+];
 
 /* ── Section A: Hero ────────────────────────── */
 const Hero = () => (
