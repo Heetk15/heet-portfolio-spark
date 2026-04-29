@@ -23,11 +23,19 @@ import ScrollReveal from "@/components/ScrollReveal";
 import ProjectGallery, { GalleryImage } from "@/components/ProjectGallery";
 
 const galleryImages: GalleryImage[] = [
-  { src: "/placeholder.svg", caption: "Dashboard View" },
-  { src: "/placeholder.svg", caption: "Dark Mode UI" },
-  { src: "/placeholder.svg", caption: "Settings Panel" },
-  { src: "/placeholder.svg", caption: "Mobile Responsive" },
-  { src: "/placeholder.svg", caption: "User Profile" },
+  { src: "/mindbridge/mb-landing.png", caption: "Landing Experience" },  
+  { src: "/mindbridge/mb-features.png", caption: "Feature Highlights" },  
+  { src: "/mindbridge/mb-elderdash.png", caption: "Elder View Dashboard" },
+  { src: "/mindbridge/mb-dash-dark.png", caption: "Dark Mode Dashboard" },
+  { src: "/mindbridge/mb-sos.png", caption: "SOS Alerts" },
+  { src: "/mindbridge/mb-chatbot.png", caption: "AI Chat Companion" },
+  { src: "/mindbridge/mb-games.png", caption: "Cognitive Games" },
+  { src: "/mindbridge/mb-gameeg.png", caption: "Game Example" },
+  { src: "/mindbridge/mb-caredash.png", caption: "Caregiver Dashboard" },  
+  { src: "/mindbridge/mb-care-analytics.png", caption: "Caregiver Analytics" },
+  { src: "/mindbridge/mb-care-analytics2.png", caption: "Caregiver Analytics Detail" },
+  { src: "/mindbridge/mb-care-profile.png", caption: "Caregiver Profile" },
+  { src: "/mindbridge/mb-care-tasks.png", caption: "Caregiver Add Tasks" },
 ];
 
 /* ── Section A: Hero ────────────────────────── */

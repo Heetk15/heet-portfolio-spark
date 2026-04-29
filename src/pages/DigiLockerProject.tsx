@@ -18,11 +18,16 @@ import ScrollReveal from "@/components/ScrollReveal";
 import ProjectGallery, { GalleryImage } from "@/components/ProjectGallery";
 
 const galleryImages: GalleryImage[] = [
-  { src: "/placeholder.svg", caption: "Dashboard View" },
-  { src: "/placeholder.svg", caption: "Dark Mode UI" },
-  { src: "/placeholder.svg", caption: "Settings Panel" },
-  { src: "/placeholder.svg", caption: "Mobile Responsive" },
-  { src: "/placeholder.svg", caption: "User Profile" },
+  { src: "/digilocker/dl-landingpg1.png", caption: "Landing Page 1" },
+  { src: "/digilocker/dl-landingpg2.png", caption: "Landing Page 2" },
+  { src: "/digilocker/dl-landingpg3.png", caption: "Landing Page 3" },
+  { src: "/digilocker/dl-loginpg.png", caption: "Login Screen" },
+  { src: "/digilocker/dl-homepg.png", caption: "Home Dashboard" },
+  { src: "/digilocker/dl-issueddocpg.png", caption: "Issued Documents" },
+  { src: "/digilocker/dl-explorepg.png", caption: "Explore Catalog" },
+  { src: "/digilocker/dl-settingspg.png", caption: "Settings" },
+  { src: "/digilocker/dl-darkmode.png", caption: "Dark Mode" },
+  { src: "/digilocker/dl-helppg.png", caption: "Help & Support" },  
 ];
 
 /* ── Hero ─────────────────────────────────── */
