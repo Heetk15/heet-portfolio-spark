@@ -24,6 +24,7 @@ const projects = [
     title: "DigiLocker Redesign",
     description: "UI/UX redesign of DigiLocker platform focusing on usability improvements and better digital document management experience.",
     stack: ["Figma", "UI/UX Design"],
+    link: "/project/digilocker",
   },
 ];
 
